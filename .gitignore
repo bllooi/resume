@@ -1,0 +1,9 @@
+# build files
+*.aux
+*.log
+*.out
+
+# editor files
+*~
+\#*\#
+.\#*

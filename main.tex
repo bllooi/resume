@@ -1,0 +1,135 @@
+\documentclass[10pt,letterpaper,sans]{moderncv}
+
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}  
+\usepackage[utf8]{inputenc}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage[scale=0.75,margin=0.65in]{geometry}
+\usepackage{import}
+
+\newcommand*{\httpslink}[2][]{% <=======================================
+  \ifthenelse{\equal{#1}{}}%
+    {\href{https://#2}{#2}}%
+    {\href{https://#2}{#1}}}
+
+\newcommand*{\googlescholarsocialsymbol}  {\includegraphics[width=0.5cm]{example-image-a}~} % <===================
+\newcommand*{\researchgatesocialsymbol}  {\includegraphics[width=0.5cm]{example-image-b}~} % <===================
+\newcommand*{\testsocialsymbol}  {\includegraphics[width=0.5cm]{example-image-c}~} % <===================
+
+
+\makeatletter
+\RenewDocumentCommand{\social}{O{}O{}m}{%
+  \ifthenelse{\equal{#2}{}}%
+    { 
+    \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httpslink[#3]{www.linkedin.com/in/#3}}}{}%
+    \ifthenelse{\equal{#1}{email2}}{\collectionadd[email2]{socials}{\protect\emailsymbol\emaillink[#3]{#3}}}            {}% <= adding this
+    \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\xspace\httpslink[#3]{#3}}}     {}% <= adding this
+    \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httpslink[#3]{www.twitter.com/#3}}}    {}%
+    \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httpslink[#3]{www.github.com/#3}}}     {}%
+    }
+    {\collectionadd[#1]{socials}{\protect\httpslink[#3]{#2}}}}
+\makeatother
+
+% personal data
+\name{Devin}{Pohl}
+\address{5707 Zinfandel St}{Greeley, Colorado}{United States}
+\phone[mobile]{(505) 419-1052}   
+\email{devin.pohl@colostate.edu}
+\social[email2]{pohl.devin@gmail.com}
+\social[github]{Shizcow}
+%\social[homepage]{www.pohldev.in}
+
+
+
+% ----------------------------------------------------------------------------------
+% content
+% ----------------------------------------------------------------------------------
+\begin{document}
+% -----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace{-2em}
+\small{I am a undergraduate computer engineering student in my sophomore year of a bachelor's degree at Colorado State University.\\
+  I have a passion for programming and electronics, with a drive to better the world through open source and cutting-edge applications.}
+\vspace{-0.5em}
+\section{Education}
+\begin{itemize}
+\item{\cventry{Graduating May 2022}{Bachelor of Science in Computer Engineering, Minor in Computer Science}{Colorado State University}{Fort Collins, CO}{}{
+  \begin{itemize}
+  \item \textbf{Relevant Coursework:} Circuit Theory and Application, Software Engineering, Low Level Programming, \\
+    Data Structures, Electricity and Magnetism, Robotics, Sensors and Systems
+  \item \textbf{CSU Circuits:} Outreach program to Middle and High Schools aimed at exciting future Electrical and \\
+    Computer Engineers through projects, demos, workshops, and lessons on programming and electronics
+  \item \textbf{Ram Robotics Club:} Experience with all aspects of robotics, from design, to implementation, to marketing
+  \end{itemize}
+}}
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+\item \textbf{Programming Languages:}
+  \begin{itemize}
+    \item Procedural (Assembly, Bash, C, Matlab, Verilog)
+    \item Object-oriented (Arduino, C++, Java, JavaScript, Python, Rust)
+    \item Functional (Lisp)
+    \item Other (\LaTeX, Befunge, BF, Whitespace)
+  \end{itemize}
+\item \textbf{Libraries and Frameworks:} 
+  \begin{itemize}
+  \item Web Based (ReactJS, VueJS, NodeJS, ExpressJS, jQuery)
+  \item Graphical (GTK, Qt, Android API)
+  \item Computational (OpenCL, OpenGL, Tensorflow)
+  \end{itemize}
+\item \textbf{Software:} 
+  \begin{itemize}
+  \item Computer Aided Design / Animation (Blender, Solidworks)
+  \item Technical (Quartus, LabView)
+  \end{itemize}
+\end{itemize}
+
+\section{Work Experience}
+\begin{itemize}
+\item{\cventry{Jun 2019 -- Sept 2019}{Centennial Consulting Group}{Accounts Receivable Admin}{Fort Collins, CO}{}{
+    \begin{itemize}
+    \item Posted payments for homeowners and organizations, prepared deposits, and processed change of ownership
+    \item Wrote, tested, and deployed time-saving software across the company
+    \end{itemize}
+}}
+\item{\cventry{Jul 2019 -- Aug 2019}{Tech Corps}{Programming Instructor}{Fort Collins, CO}{}{
+    \begin{itemize}
+    \item Lead week Middle and Elementary School summer camps in Scratch, MIT App Inventor, and Python
+    \item Prepared and delivered material covering programming fundamentals, theory, and applications
+    \end{itemize}
+}}
+\item{\cventry{Jan 2019 -- May 2019}{Sprint by Brightstar}{Sales Representative}{Farmington, NM}{}{
+    \begin{itemize}
+    \item Performed electronic and software repairs on phones and tablets
+    \item Maintained overwhelmingly positive reviews by customers and clients
+    \end{itemize}
+}}
+\end{itemize}
+
+\section{Notable Projects}
+\begin{itemize}
+\item{\cventry{\faGlobe\xspace www.csuscheduler.com}{\faGithub\xspace www.github.com/Shizcow/csu-scheduler}{CSU Scheduler}{v1.12.1 Released Jan 2020}{}{
+    \begin{itemize}
+    \item Unofficial schedule editor for Colorado State University
+    \item Create, test, save, and share schedules in one powerful tool
+    \end{itemize}
+}}
+\item{\cventry{}{\faGithub\xspace www.github.com/Shizcow/rustracer}{Rustracer}{Ongoing}{}{
+    \begin{itemize}
+    \item A GPU accelerated Whitted ray tracer written in Rust
+    \end{itemize}
+}}
+\item{\textbf{Cad Projects}
+    \begin{itemize}
+    \item Solidworks -- Megaminx Render and solve \enspace\enspace\faVideoCamera\xspace www.youtu.be/vw6sNYsvsbU
+    \item Blender -- VEX Dual Differential Transmission Render \enspace\enspace\faVideoCamera\xspace youtu.be/SVo7KuS9RZo
+    \item Blender -- Textured Single Source Static Transmission Render \enspace\enspace\faVideoCamera\xspace youtu.be/u3VCtng2CNw
+    \end{itemize}
+}
+\end{itemize}
+
+\end{document}
