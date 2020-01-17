@@ -1,6 +1,7 @@
+% -------------------------------------
+% PREAMBLE
+% -------------------------------------
 \documentclass[10pt,letterpaper,sans]{moderncv}
-
-
 \moderncvstyle{banking}
 \moderncvcolor{blue}  
 \usepackage[utf8]{inputenc}
@@ -9,50 +10,51 @@
 \usepackage[scale=0.75,margin=0.65in]{geometry}
 \usepackage{import}
 
-\newcommand*{\httpslink}[2][]{% <=======================================
+% Used to add a second email / homepage, but preserve the ordering
+% If this wasn't done, homepage would be shown before email 2
+% Now they're right next to eachother
+\newcommand*{\httpslink}[2][]{
   \ifthenelse{\equal{#1}{}}%
     {\href{https://#2}{#2}}%
     {\href{https://#2}{#1}}}
-
-\newcommand*{\googlescholarsocialsymbol}  {\includegraphics[width=0.5cm]{example-image-a}~} % <===================
-\newcommand*{\researchgatesocialsymbol}  {\includegraphics[width=0.5cm]{example-image-b}~} % <===================
-\newcommand*{\testsocialsymbol}  {\includegraphics[width=0.5cm]{example-image-c}~} % <===================
-
-
 \makeatletter
-\RenewDocumentCommand{\social}{O{}O{}m}{%
-  \ifthenelse{\equal{#2}{}}%
+\RenewDocumentCommand{\social}{O{}O{}m}{
+  \ifthenelse{\equal{#2}{}}
     { 
-    \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httpslink[#3]{www.linkedin.com/in/#3}}}{}%
+    \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httpslink[#3]{www.linkedin.com/in/#3}}}{}
     \ifthenelse{\equal{#1}{email2}}{\collectionadd[email2]{socials}{\protect\emailsymbol\emaillink[#3]{#3}}}            {}% <= adding this
     \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\xspace\httpslink[#3]{#3}}}     {}% <= adding this
-    \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httpslink[#3]{www.twitter.com/#3}}}    {}%
-    \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httpslink[#3]{www.github.com/#3}}}     {}%
+    \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httpslink[#3]{www.twitter.com/#3}}}    {}
+    \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httpslink[#3]{www.github.com/#3}}}     {}
     }
     {\collectionadd[#1]{socials}{\protect\httpslink[#3]{#2}}}}
 \makeatother
 
-% personal data
+
+% -------------------------------------
+% CONTENT
+% -------------------------------------
+
 \name{Devin}{Pohl}
 \address{5707 Zinfandel St}{Greeley, Colorado}{United States}
 \phone[mobile]{(505) 419-1052}   
 \email{devin.pohl@colostate.edu}
-\social[email2]{pohl.devin@gmail.com}
+\social[email2]{pohl.devin@gmail.com} % doing this through social so the correct order is preserved
 \social[github]{Shizcow}
 %\social[homepage]{www.pohldev.in}
 
-
-
-% ----------------------------------------------------------------------------------
-% content
-% ----------------------------------------------------------------------------------
 \begin{document}
-% -----       resume       ---------------------------------------------------------
 \makecvtitle
-\vspace{-2em}
+% -------------------------------------
+% SUMMARY
+% -------------------------------------
+\vspace{-2em} % used to remove annoying vertical space under title
 \small{I am a undergraduate computer engineering student in my sophomore year of a bachelor's degree at Colorado State University.\\
   I have a passion for programming and electronics, with a drive to better the world through open source and cutting-edge applications.}
-\vspace{-0.5em}
+\vspace{-0.5em} % used to make last workaround look consistant
+% -------------------------------------
+% EDUCATION
+% -------------------------------------
 \section{Education}
 \begin{itemize}
 \item{\cventry{Graduating May 2022}{Bachelor of Science in Computer Engineering, Minor in Computer Science}{Colorado State University}{Fort Collins, CO}{}{
@@ -65,7 +67,9 @@
   \end{itemize}
 }}
 \end{itemize}
-
+% -------------------------------------
+% TECHNICAL SKILLS
+% -------------------------------------
 \section{Technical Skills}
 \begin{itemize}
 \item \textbf{Programming Languages:}
@@ -87,7 +91,9 @@
   \item Technical (Quartus, LabView)
   \end{itemize}
 \end{itemize}
-
+% -------------------------------------
+% WORK EXPERIENCE
+% -------------------------------------
 \section{Work Experience}
 \begin{itemize}
 \item{\cventry{Jun 2019 -- Sept 2019}{Centennial Consulting Group}{Accounts Receivable Admin}{Fort Collins, CO}{}{
@@ -109,7 +115,9 @@
     \end{itemize}
 }}
 \end{itemize}
-
+% -------------------------------------
+% NOTABLE PROJECTS
+% -------------------------------------
 \section{Notable Projects}
 \begin{itemize}
 \item{\cventry{\faGlobe\xspace www.csuscheduler.com}{\faGithub\xspace www.github.com/Shizcow/csu-scheduler}{CSU Scheduler}{v1.12.1 Released Jan 2020}{}{
