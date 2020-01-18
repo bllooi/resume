@@ -15,12 +15,12 @@
 % Now they're right next to eachother
 \newcommand*{\httpslink}[2][]{
   \ifthenelse{\equal{#1}{}}%
-    {\href{https://#2}{#2}}%
-    {\href{https://#2}{#1}}}
+    {\href{#2}{#2}}%
+    {\href{#2}{#1}}}
 \makeatletter
 \RenewDocumentCommand{\social}{O{}O{}m}{
   \ifthenelse{\equal{#2}{}}
-    { 
+    {
     \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httpslink[#3]{www.linkedin.com/in/#3}}}     {}
     \ifthenelse{\equal{#1}{email2}}  {\collectionadd[email2]{socials}  {\protect\emailsymbol\emaillink[#3]{#3}}}             {} % <= adding this
     \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\kern0.5pt\httpslink[#3]{#3}}}          {} % <= adding this
