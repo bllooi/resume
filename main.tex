@@ -13,21 +13,17 @@
 % Used to add a second email / homepage, but preserve the ordering
 % If this wasn't done, homepage would be shown before email 2
 % Now they're right next to eachother
-\newcommand*{\httpslink}[2][]{
-  \ifthenelse{\equal{#1}{}}%
-    {\href{http://#2}{#2}}%
-    {\href{http://#2}{#1}}}
 \makeatletter
 \RenewDocumentCommand{\social}{O{}O{}m}{
   \ifthenelse{\equal{#2}{}}
     { 
-    \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httpslink[#3]{www.linkedin.com/in/#3}}}     {}
-    \ifthenelse{\equal{#1}{email2}}  {\collectionadd[email2]{socials}  {\protect\emailsymbol\emaillink[#3]{#3}}}             {} % <= adding this
-    \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\kern0.5pt\httpslink[#3]{#3}}}          {} % <= adding this
-    \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httpslink[#3]{www.twitter.com/#3}}}         {}
-    \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\kern-3pt \httpslink[#3]{www.github.com/#3}}}{} % github logo isn't spaced properly, kern fixes this
+    \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httplink[#3]{www.linkedin.com/in/#3}}}{}
+    \ifthenelse{\equal{#1}{email2}}  {\collectionadd[email2]{socials}  {\protect\emailsymbol\emaillink[#3]{#3}}}       {} % <= adding this
+    \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\xspace\httplink[#3]{#3}}}     {} % <= adding this
+    \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httplink[#3]{www.twitter.com/#3}}}    {}
+    \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httplink[#3]{www.github.com/#3}}}     {}
     }
-    {\collectionadd[#1]{socials}{\protect\httpslink[#3]{#2}}}}
+    {\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
 \makeatother
 
 
@@ -120,13 +116,13 @@
 % -------------------------------------
 \section{Notable Projects}
 \begin{itemize}
-\item{\cventry{\faGlobe\xspace www.csuscheduler.com}{\faGithub\xspace www.github.com/Shizcow/csu-scheduler}{CSU Scheduler}{v1.12.1 Released Jan 2020}{}{
+\item{\cventry{\protect\faGlobe\xspace\httplink[www.csuscheduler.com]{www.csuscheduler.com}}{\protect\faGithub\xspace\httplink[Shizcow/csu-scheduler]{www.github.com/Shizcow/csu-scheduler}}{CSU Scheduler}{v1.12.1 Released Jan 2020}{}{
     \begin{itemize}
     \item Unofficial schedule editor for Colorado State University
     \item Create, test, save, and share schedules in one powerful tool
     \end{itemize}
 }}
-\item{\cventry{}{\faGithub\xspace www.github.com/Shizcow/rustracer}{Rustracer}{Ongoing}{}{
+\item{\cventry{}{\protect\faGithub\xspace\httplink[Shizcow/rustracer]{www.github.com/Shizcow/rustracer}}{Rustracer}{Ongoing}{}{
     \begin{itemize}
     \item A GPU-accelerated Whitted ray tracer written in Rust leveraging GTK and OpenCL
     \end{itemize}
