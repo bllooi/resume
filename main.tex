@@ -3,7 +3,8 @@
 % -------------------------------------
 \documentclass[10pt,letterpaper,sans]{moderncv}
 \moderncvstyle{banking}
-\moderncvcolor{blue}  
+\moderncvcolor{blue}
+\moderncvicons{awesome}
 \usepackage[utf8]{inputenc}
 \usepackage{xspace}
 \usepackage{verbatim}
@@ -22,6 +23,7 @@
     \ifthenelse{\equal{#1}{homepage}}{\collectionadd[homepage]{socials}{\protect\faGlobe\xspace\httplink[#3]{#3}}}     {} % <= adding this
     \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httplink[#3]{www.twitter.com/#3}}}    {}
     \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httplink[#3]{www.github.com/#3}}}     {}
+    \ifthenelse{\equal{#1}{arch}}  {\collectionadd[arch]{socials}  {\protect\raisebox{-0.25mm}{\includegraphics[scale=0.215]{arch_logo.png}}\xspace\httplink[#3]{aur.archlinux.org/account/#3}}}{} % <= adding this
     }
     {\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
 \makeatother
@@ -37,6 +39,7 @@
 \email{devin.pohl@colostate.edu}
 \social[email2]{pohl.devin@gmail.com } % space so newline behaves
 \social[github]{Shizcow}
+\social[arch]{Shizcow}
 \social[homepage]{www.pohldev.in}
 
 
@@ -123,9 +126,9 @@
     \item Create, test, save, and share schedules in one powerful tool
     \end{itemize}
 }}
-\item{\cventry{}{\protect\faGithub\xspace\httplink[Shizcow/rustracer]{www.github.com/Shizcow/rustracer}}{Rustracer}{Ongoing}{}{
+\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}\xspace\httplink[arch::aur::smatrix]{aur.archlinux.org/packages/smatrix}}{\protect\faGithub\xspace\httplink[Shizcow/smatrix]{www.github.com/Shizcow/smatrix}}{smatrix}{v1.1.1 Released Apr 2020}{}{
     \begin{itemize}
-    \item A GPU-accelerated Whitted ray tracer written in Rust leveraging GTK and OpenCL
+    \item "The Matrix" terminal wallpaper, but it's live-updating stock prices
     \end{itemize}
 }}
 \item{\textbf{Cad Projects}
