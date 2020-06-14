@@ -6,10 +6,14 @@
 \moderncvcolor{blue}
 \moderncvicons{awesome}
 \usepackage[utf8]{inputenc}
-\usepackage{xspace}
+\usepackage{xspace, relsize}
 \usepackage{verbatim}
 \usepackage[scale=0.75,margin=0.65in]{geometry}
 \usepackage{import}
+
+% This is how the C++ spec typesets "C++"
+\newcommand{\Rplus}{\protect\hspace{-.1em}\protect\raisebox{.35ex}{\smaller{\smaller\textbf{+}}}}
+\newcommand{\Cpp}{\mbox{C\Rplus\Rplus}\xspace}
 
 % Used to add a second email / homepage, but preserve the ordering
 % If this wasn't done, homepage would be shown before email 2
@@ -74,8 +78,8 @@
 \begin{itemize}
 \item \textbf{Programming Languages:}
   \begin{itemize}
-    \item \makebox[3.5cm][l]{Procedural} ARM Assembly, Bash, C, Matlab, Verilog
-    \item \makebox[3.5cm][l]{Object-Oriented} Arduino, C++, Java, JavaScript, Python, Rust, VBS
+    \item \makebox[3.5cm][l]{Procedural} \textbf{ARM Assembly}, Bash, C, Matlab, Verilog
+    \item \makebox[3.5cm][l]{Object-Oriented} Arduino, \textbf{\Cpp}, Java, \textbf{JavaScript}, Python, \textbf{Rust}, VBS
     \item \makebox[3.5cm][l]{Functional} Lisp, Elisp, \LaTeX
   \end{itemize}
 \item \textbf{Libraries and Frameworks:} 
