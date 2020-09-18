@@ -11,6 +11,9 @@
 \usepackage[scale=0.75,margin=0.65in]{geometry}
 \usepackage{import}
 
+% underscores in this font look really bad
+\renewcommand{\_}{\textscale{.7}{\textunderscore}}
+
 % This is how the C++ spec typesets "C++"
 \newcommand{\Rplus}{\protect\hspace{-.1em}\protect\raisebox{.35ex}{\smaller{\smaller\textbf{+}}}}
 \newcommand{\Cpp}{\mbox{C\Rplus\Rplus}\xspace}
@@ -53,7 +56,7 @@
 % SUMMARY
 % -------------------------------------
 \vspace{-2em} % used to remove annoying vertical space under title
-\small{I am a undergraduate Computer Engineering student in my junior year of a Bachelor's degree at Colorado State University.\\
+\small{I am a 3\textsuperscript{rd} year undergraduate Computer Engineering student at Colorado State University pursuing a Bachelor's degree.\\
   I have a passion for programming and electronics, driven to better the world through open source and cutting-edge applications.}
 \vspace{-0.5em} % used to make last workaround look consistant
 % -------------------------------------
@@ -63,11 +66,13 @@
 \begin{itemize}
 \item{\cventry{Graduating May 2022}{Bachelor of Science in Computer Engineering, Minor in Computer Science}{Colorado State University}{Fort Collins, CO}{}{
     \begin{itemize}
-    \item \textbf{Relevant Coursework:} Circuit Theory and Application, Software Engineering, Low Level Programming, \\
-      Data Structures, Electricity and Magnetism, Robotics, Sensors and Systems
-    \item \textbf{ECE Outreach:} Exciting Middle and High School students about Electrical and Computer Engineering \\
-      with projects, workshops, and lessons on programming and electronics
-    \item \textbf{Ram Robotics Club:} Experience with all aspects of robotics including design, implementation, and manufacturing
+    \item \textbf{Relevant Coursework:} Analog and Digital Circuit Construction, VSLI,
+      Software Engineering, Low Level Programming, \\
+      Robotics, Data Structures and Optimization, Signals and Systems
+    \item \textbf{ECE Outreach:} Exciting Middle and High School students about Electrical
+      and Computer Engineering by teaching \\
+      seminars on programming, leading in-class workshops on robotics,
+      and building eye-catching electronics demos
     \end{itemize}
 }}
 \end{itemize}
@@ -78,20 +83,16 @@
 \begin{itemize}
 \item \textbf{Programming Languages:}
   \begin{itemize}
-    \item \makebox[3.5cm][l]{Procedural} \textbf{ARM Assembly}, Bash, C, Matlab, Verilog
+    \item \makebox[3.5cm][l]{Procedural} ARM Assembly, Bash, C, Matlab, \textbf{Verilog}
     \item \makebox[3.5cm][l]{Object-Oriented} Arduino, \textbf{\Cpp}, Java, \textbf{JavaScript}, Python, \textbf{Rust}, VBS
     \item \makebox[3.5cm][l]{Functional} Lisp, Elisp, \LaTeX
   \end{itemize}
 \item \textbf{Libraries and Frameworks:} 
   \begin{itemize}
+  \item \makebox[3.5cm][l]{Graphical} Native X11, XCB, Cairo, Pango, GTK, Qt,
+    Android API, ncurses
+  \item \makebox[3.5cm][l]{Computational} GMP, OpenCL, OpenGL, Sagemath
   \item \makebox[3.5cm][l]{Web Based} ReactJS, VueJS, NodeJS, ExpressJS, jQuery
-  \item \makebox[3.5cm][l]{Graphical} Native X11, GTK, Qt, Android API, curses
-  \item \makebox[3.5cm][l]{Computational} GMP, OpenCL, OpenGL, Tensorflow
-  \end{itemize}
-\item \textbf{Software:} 
-  \begin{itemize}
-  \item \makebox[3.5cm][l]{CAD and Animation} Blender, Solidworks
-  \item \makebox[3.5cm][l]{Technical} Quartus, LabView
   \end{itemize}
 \end{itemize}
 % -------------------------------------
@@ -99,22 +100,30 @@
 % -------------------------------------
 \section{Work Experience}
 \begin{itemize}
-\item{\cventry{May 2020 -- Present}{Hewlett Packard Enterprise - NonStop Team}{Software Enginerring Intern}{Fort Collins, CO}{}{
+\item{\cventry{May 2020 -- Aug 2020}{Hewlett Packard Enterprise -- NonStop Manageability Team}
+  {Software Engineering Intern}{Fort Collins, CO}{}{
     \begin{itemize}
-    \item Developed, integrated, and collaborated on mission-critical software for HPE NonStop systems
-    \end{itemize}
-}}
-\item{\cventry{Jun 2019 -- Sept 2019}{Centennial Consulting Group}{Accounts Receivable Admin}{Fort Collins, CO}{}{
-    \begin{itemize}
-    \item Posted payments for homeowners and organizations, prepared deposits, and processed change of ownership
-    \item Wrote, tested, and deployed time-saving software across the company
+    \item Improved and optimized OSM, the main application for maintaining, updating,
+      and upgrading NonStop servers
+    \item Migrated critical security procedures from CLI to GUI, cutting down on time
+      overhead and human error for end-users
+    \item Worked in Java, using Swing, AWT, RMI, and several internal HPE libraries
     \end{itemize}
 }}
 \item{\cventry{Jul 2019 -- Aug 2019}{Tech Corps}{Programming Instructor}{Fort Collins, CO}{}{
     \begin{itemize}
-    \item Lead week long summer camps aimed at Middle and Elementary School Children
-    \item Prepared and delivered material covering programming fundamentals, theory, and applications
+    \item Lead multiple week long summer camps aimed at Middle and Elementary School Children
+    \item Prepared and delivered material covering programming fundamentals, theory,
+      and applications
     \item Delivered lessons and projects in Scratch, MIT App Inventor, and Python
+    \end{itemize}
+}}
+\item{\cventry{Jun 2019 -- Sept 2019}{Centennial Consulting Group}{Accounts Receivable Admin}
+  {Fort Collins, CO}{}{
+    \begin{itemize}
+    \item Posted payments for homeowners and organizations, prepared deposits,
+      and processed change of ownership
+    \item Wrote, tested, and shared time-saving software across the company
     \end{itemize}
 }}
 \end{itemize}
@@ -123,23 +132,36 @@
 % -------------------------------------
 \section{Notable Projects}
 \begin{itemize}
-\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}\xspace\httplink[arch::aur::dmenu-rs]{aur.archlinux.org/packages/dmenu-rs}}{\protect\faGithub\xspace\httplink[Shizcow/dmenu-rs]{www.github.com/Shizcow/dmenu-rs}}{dmenu-rs}{v5.0.1 Released Jun 2020}{}{
+\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}\xspace\httplink[arch::aur::dmenu-rs]{aur.archlinux.org/packages/dmenu-rs}}{\protect\faGithub\xspace\httplink[Shizcow/dmenu-rs]{www.github.com/Shizcow/dmenu-rs}}{dmenu-rs}{v5.4.0 Released Jul 2020}{}{
     \begin{itemize}
-    \item A pixel perfect port of dmenu, the popular GNU utility for dwm and i3, rewritten in Rust
-    \item Offers lower memory usage, increased speed, and extensive plugin support
+    \item A program launcher, unit-aware calculator, spellchecker, and general
+      purpose menu for Linux
+    \item A port of the popular GNU utility dmenu to Rust, offering increased speed,
+      lower memory, and extensive plugin support
+    \item Currently working on migrating from Xlib to XCB/Cairo/Pango to offer increased
+      flexibility and modularity
     \end{itemize}
 }}
 \item{\cventry{\protect\faGlobe\xspace\httplink[www.csuscheduler.com]{www.csuscheduler.com}}{\protect\faGithub\xspace\httplink[Shizcow/csu-scheduler]{www.github.com/Shizcow/csu-scheduler}}{CSU Scheduler}{v1.12.2 Released Jan 2020}{}{
     \begin{itemize}
-    \item Unofficial schedule editor for Colorado State University
+    \item Unofficial class schedule editor for Colorado State University
     \item Create, test, save, and share schedules in one powerful tool
     \end{itemize}
 }}
-\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}\xspace\httplink[arch::aur::smatrix]{aur.archlinux.org/packages/smatrix}}{\protect\faGithub\xspace\httplink[Shizcow/smatrix]{www.github.com/Shizcow/smatrix}}{smatrix}{v1.1.1 Released Apr 2020}{}{
-    \begin{itemize}
-    \item "The Matrix" terminal wallpaper, but it's live-updating stock prices
-    \end{itemize}
-}}
+\item \textbf{Miscellaneous Rust Projects:} 
+  \begin{itemize}
+  \item \makebox[1.75cm][l]{smatrix:}
+    \makebox[10.1cm][l]{\textit{The Matrix} terminal wallpaper, but it's live-updating stock prices}
+    \makebox[3.075cm][l]{\protect\raisebox{-0.25mm}{
+        \includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}
+      \httplink[arch::aur::smatrix]{aur.archlinux.org/packages/smatrix}}
+    \makebox[5cm][l]{\protect\faGithub\xspace\httplink[Shizcow/smatrix]{www.github.com/Shizcow/smatrix}}
+  \item \makebox[1.75cm][l]{overrider-rs:}
+    \makebox[13.25cm][l]{Rust crate focusing on overriding functions, methods, and more}
+    \makebox[5cm][l]{\protect\faGithub\xspace\httplink[Shizcow/overrider]{www.github.com/Shizcow/overrider-rs}}
+  \item \makebox[1.75cm][l]{proc\_use:}
+    \makebox[13.25cm][l]{Rust crate for compile-time dynamic imports and dependency management}
+    \makebox[5cm][l]{\protect\faGithub\xspace\httplink[Shizcow/proc\_use]{www.github.com/Shizcow/proc_use}}
+  \end{itemize}
 \end{itemize}
-
 \end{document}
