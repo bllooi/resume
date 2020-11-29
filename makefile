@@ -1,8 +1,17 @@
-default:
-	pdflatex -jobname=DevinPohlResume main.tex
+export TEXINPUTS=.:..//:
+JOB=DevinPohlResume
+
+default: $(JOB).pdf
+
+$(JOB).pdf: main.tex | build
+	cd build && xelatex -jobname=$(JOB) ../main.tex
+	mv build/$(JOB).pdf .
+
+build: # set up the build directory
+	mkdir build
 
 test:	default
 	okular DevinPohlResume.pdf
 
 clean:
-	rm -f *.4ct *.4tc *.css *.dvi *.html *.idv *.lg *.tmp *.xref *.log *.aux *.out
+	-rm -rf build
