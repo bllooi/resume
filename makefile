@@ -3,7 +3,7 @@ JOB=DevinPohlResume
 
 default: $(JOB).pdf
 
-$(JOB).pdf: main.tex | build
+$(JOB).pdf: main.tex *.png | build
 	cd build && xelatex -jobname=$(JOB) ../main.tex
 	mv build/$(JOB).pdf .
 
