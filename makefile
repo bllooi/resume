@@ -1,5 +1,5 @@
 export TEXINPUTS=.:..//:
-JOB=DevinPohlResume
+JOB=Shen_Wei_Brendan_Looi
 
 default: $(JOB).pdf
 
@@ -11,7 +11,7 @@ build: # set up the build directory
 	mkdir build
 
 test:	default
-	okular DevinPohlResume.pdf
+	okular $(JOB).pdf &
 
 clean:
 	-rm -rf build
