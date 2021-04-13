@@ -1,14 +1,14 @@
 % -------------------------------------
 % PREAMBLE
 % -------------------------------------
-\documentclass[10pt,letterpaper,sans]{moderncv}
+\documentclass[11pt,letterpaper,sans]{moderncv}
 \moderncvstyle{banking}
-\moderncvcolor{blue}
+\moderncvcolor{burgundy}
 \moderncvicons{awesome}
 \usepackage[utf8]{inputenc}
 \usepackage{xspace, relsize}
 \usepackage{verbatim}
-\usepackage[scale=0.75,margin=0.65in]{geometry}
+\usepackage[scale=0.75,margin=0.75in]{geometry}
 \usepackage{import}
 \usepackage[super]{nth}
 
@@ -42,13 +42,12 @@
 % -------------------------------------
 
 \name{Shen Wei Brendan}{Looi}
-\address{5707 Zinfandel St}{Greeley, Colorado}{United States}
-\phone[mobile]{(505) 419-1052}   
-\email{devin.pohl@colostate.edu}
-\social[email2]{pohl.devin@gmail.com } % space so newline behaves
-\social[github]{Shizcow}
-\social[arch]{Shizcow}
-\social[homepage]{www.pohldev.in}
+\address{318 W Prospect Rd}{Fort Collins, Colorado}{United States}
+\phone[mobile]{(970) 402-3032}   
+\email{bllooi@rams.colostate.edu}
+\social[email2]{shenweilooi@gmail.com } % space so newline behaves
+\social[github]{bllooi}
+%\social[homepage]{TBD}
 
 
 \begin{document}
@@ -57,50 +56,26 @@
 % SUMMARY
 % -------------------------------------
 \vspace{-2em} % used to remove annoying vertical space under title
-\small{I am a \nth{3} year undergraduate Computer Engineering student at Colorado State University pursuing a Bachelor's degree.\\
-  I have a passion for programming and electronics, driven to better the world through open source and cutting-edge applications.}
+\small{I am a senior undergraduate in Applied Mathematics at Colorado State University. I have a passion for mathematics and programming, in the way that we can use mathematical concepts to improve and optimize the world around us in a progressively digital world.}
 \vspace{-0.5em} % used to make last workaround look consistant
 % -------------------------------------
 % EDUCATION
 % -------------------------------------
 \section{Education}
 \begin{itemize}
-\item{\cventry{Graduating May 2022}{Bachelor of Science in Computer Engineering, Minors in Mathematics and Computer Science}{Colorado State University}{Fort Collins, CO}{}{
+\item{\cventry{Graduating May 2021}{Bachelor of Science in Mathematics, Concentration in Applied Mathematics -- Computer Science}{Colorado State University}{Fort Collins, CO}{}{
     \begin{itemize}
-    \item \textbf{Relevant Coursework:}
-      Software Engineering, Operating Systems, Algorithms and Optimization, \\
-      Low Level Programming, VSLI,
-      Analog and Digital Circuit Construction, Signals and Systems
-    \item \textbf{ECE Outreach:} Exciting Middle and High School students about Electrical and Computer Engineering by teaching\\
-      seminars on programming, leading in-class workshops on robotics,
-      and building eye-catching electronics demos\\
-      \textit{Digital Team Lead}: Organizing events, overseeing projects, collaborating with other Outreach teams, and networking across CSU
+    \item \textbf{Relevant Mathematics Coursework:}
+      Fourier and Wavelet Analysis, Numerical Analysis, Abstract Algebra, \\Ordinary/Partial Differential Equations, Advanced Calculus of One Variable, Projects in Applied Mathematics
+    \item \textbf{Relevant Computer Science Coursework:}
+      Software Development, Information and Coding Theory, \\Post-Quantum Cryptography,  Mathematics of Information Security, Data Structures, Discrete Structures 
     \end{itemize}
 }}
 \end{itemize}
 % -------------------------------------
-% TECHNICAL SKILLS
+% RESEARCH EXPERIENCE
 % -------------------------------------
-\section{Technical Skills}
-\begin{itemize}
-\item \textbf{Programming Languages:}
-  \begin{itemize}
-    \item \makebox[3.5cm][l]{Procedural} ARM Assembly, Bash, \textbf{C}, Fish, Matlab, MIPS, Verilog
-    \item \makebox[3.5cm][l]{Object-Oriented} Arduino, \textbf{\Cpp}, Java, \textbf{JavaScript}, Python, \textbf{Rust}, VBS
-    \item \makebox[3.5cm][l]{Functional} Lisp, \textbf{Elisp}, \LaTeX
-  \end{itemize}
-\item \textbf{Libraries and Frameworks:} 
-  \begin{itemize}
-  \item \makebox[3.5cm][l]{Graphical} Native X11, XCB, Cairo, Pango, Unicode CLDR,
-    GTK, Qt, Android API, ncurses
-  \item \makebox[3.5cm][l]{Computational} GMP, OpenCL, OpenGL, Rink.rs, Sagemath
-  \item \makebox[3.5cm][l]{Web Based} Rocket.rs, ReactJS, VueJS, NodeJS, ExpressJS, jQuery
-  \end{itemize}
-\end{itemize}
-% -------------------------------------
-% WORK EXPERIENCE
-% -------------------------------------
-\section{Work Experience}
+\section{Research Experience}
 \begin{itemize}
 \item{\cventry{May 2020 -- Aug 2020}{Hewlett Packard Enterprise -- NonStop Manageability Team}
   {Software Engineering Intern}{Fort Collins, CO}{}{
@@ -130,33 +105,13 @@
 }}
 \end{itemize}
 % -------------------------------------
-% NOTABLE PROJECTS
+% TECHNICAL SKILLS
 % -------------------------------------
-\section{Notable Projects}
+\section{Technical Skills}
 \begin{itemize}
-\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{rust_logo.png}}\xspace\httplink[docs.rs/hotpatch]{docs.rs/hotpatch/0.3.0/hotpatch/}}{\protect\faGithub\xspace\httplink[Shizcow/hotpatch]{www.github.com/Shizcow/hotpatch}}{hotpatch}{v0.3.0 Released Feb 2021}{}{
-    \begin{itemize}
-    \item Rust crate for cross-platform hot-reloading of functions and methods at runtime as easily as possible
-    \item Guarentees memory saftey, thread saftey, type correctness, and namespace parity
-    \end{itemize}
-}}
-\item{\cventry{\protect\raisebox{-0.25mm}{\includegraphics[scale=0.205,decodearray={0 0 0 0 0 0}]{arch_logo.png}}\xspace\httplink[arch::aur::dmenu-rs]{aur.archlinux.org/packages/dmenu-rs}}{\protect\faGithub\xspace\httplink[Shizcow/dmenu-rs]{www.github.com/Shizcow/dmenu-rs}}{dmenu-rs}{v5.5.1 Released Dec 2020}{}{
-    \begin{itemize}
-    \item A program launcher, unit-aware calculator, spellchecker, search engine
-      dispatcher, and general purpose menu for Linux
-    \item A port of the popular GNU utility dmenu to Rust, offering increased speed,
-      lower memory usage, and extensive plugin support
-    \item Over 2000 users and 100+ stars on GitHub
-    \end{itemize}
-}}
-\item{\cventry{\protect\faGlobe\xspace\httplink[www.csuscheduler.com]{www.csuscheduler.com}}{\protect\faGithub\xspace\httplink[Shizcow/csu-scheduler]{www.github.com/Shizcow/csu-scheduler}}{CSU Scheduler}{v1.12.2 Released Jan 2020}{}{
-    \begin{itemize}
-    \item Unofficial class schedule editor for Colorado State University
-    \item Create, test, save, and share schedules in one powerful tool
-    \end{itemize}
-}}
+\item \textbf{Programming Languages and Frameworks:} Bash, \textbf{C}, Matlab, \textbf{Maple},       \textbf{\Cpp}, Java, JavaScript, \textbf{Python}, \LaTeX, Haskell, Android API, Sagemath
+\item \textbf{Mathematical Skills:}
 \end{itemize}
-
 % for some reason, it's assumed that multiple pages exist
 % make this page look shorter so a '1/2' toast isn't visible
 \vspace*{-5cm}
