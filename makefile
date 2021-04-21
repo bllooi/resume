@@ -3,7 +3,7 @@ JOB=Shen_Wei_Brendan_Looi
 
 default: $(JOB).pdf
 
-$(JOB).pdf: main.tex *.png | build
+$(JOB).pdf: main.tex | build
 	cd build && xelatex -jobname=$(JOB) ../main.tex
 	mv build/$(JOB).pdf .
 
